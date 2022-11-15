@@ -8,9 +8,8 @@ pipeline {
           echo $(date) $BUILD_NUMBER > versions
           git config user.email "deoremahesh791@gmail.com"
           git config user.name "Mahesh"
-          git checkout $GIT_BRANCH
           git add . && git commit -m \"Added\"
-          git push
+          git push origin HEAD:$GIT_BRANCH
         '''
       }
     }
