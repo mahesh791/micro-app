@@ -5,6 +5,9 @@ pipeline {
       steps {
         sh '''
           git switch -c $MICROAPP_BRANCH origin/$MICROAPP_BRANCH
+          #Simulating some compile task
+          echo " " >> Dockerfile
+          #Archive build artifact
           tar --exclude='.git' -zcvf output.tar.gz .
         '''
       }
