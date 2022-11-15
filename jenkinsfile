@@ -21,7 +21,7 @@ pipeline {
           sleep 50
           git pull origin main
           echo "\n"$(date) $BUILD_NUMBER >> versions
-          git add . && git commit -m \"Added ${BUILD_NUMBER}\"
+          git add versions && git commit -m \"Added ${BUILD_NUMBER}\"
           git push origin HEAD:main
           #test
         '''
