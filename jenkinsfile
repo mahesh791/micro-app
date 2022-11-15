@@ -4,6 +4,7 @@ pipeline {
     stage('archive') {
       steps {
         sh '''
+          echo $MICROAPP_BRANCH
           tar --exclude='.git' -zcvf output.tar.gz .
         '''
       }
@@ -22,7 +23,7 @@ pipeline {
           git pull origin main
           echo "\n"$(date) $BUILD_NUMBER >> versions
           git add versions && git commit -m \"Added ${BUILD_NUMBER}\"
-          git push origin HEAD:main
+          #git push origin HEAD:main
           #test
         '''
       }
