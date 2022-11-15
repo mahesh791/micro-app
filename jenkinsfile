@@ -4,7 +4,7 @@ pipeline {
     stage('archive') {
       steps {
         sh '''
-          tar -czvf output.tar.gz .
+          tar -czvf --exclude='.git' output.tar.gz .
         '''
       }
     }
