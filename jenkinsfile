@@ -6,7 +6,7 @@ pipeline {
         sh '''
           git --version
           echo 'safkl' > versions
-          git add . git && commit -m \"Added\"
+          git add . && git commit -m \"Added\"
         '''
       }
     }
