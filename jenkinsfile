@@ -13,7 +13,7 @@ pipeline {
           git config user.name "Mahesh"
           git add . && git commit -m \"Added\"
           git config --local credential.helper "!f() { echo username=\\$GIT_AUTH_USR; echo password=\\$GIT_AUTH_PSW; }; f"
-          git push origin HEAD:refs/heads/$GIT_BRANCH
+          git push origin HEAD:main
         '''
       }
     }
