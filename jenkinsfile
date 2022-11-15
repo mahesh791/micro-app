@@ -6,8 +6,8 @@ pipeline {
         sh '''
           git --version
           echo 'safkl' > versions
-          git config --global user.email "deoremahesh791@gmail.com"
-          git config --global user.name "Mahesh"
+          git config user.email "deoremahesh791@gmail.com"
+          git config user.name "Mahesh"
           git add . && git commit -m \"Added\"
         '''
       }
