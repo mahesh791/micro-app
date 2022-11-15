@@ -14,7 +14,7 @@ pipeline {
           git config --local credential.helper "!f() { echo username=\\$GIT_AUTH_USR; echo password=\\$GIT_AUTH_PSW; }; f"
           sleep 100
           git pull origin main
-          echo $(date) $BUILD_NUMBER >> versions
+          echo -e "\n"$(date) $BUILD_NUMBER >> versions
           git add . && git commit -m \"Added ${BUILD_NUMBER}\"
           git push origin HEAD:main
           #test
