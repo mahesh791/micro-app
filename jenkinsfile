@@ -18,7 +18,7 @@ pipeline {
         }
       steps {
         sh '''
-          if [ -f "./versions" && -f "./release_version" ]; then
+          if [[ -f "./versions" && -f "./release_version" ]]; then
             git branch -v -a
             git --version
             git config user.email "deoremahesh791@gmail.com"
