@@ -4,7 +4,6 @@ pipeline {
     stage('archive') {
       steps {
         sh '''
-          echo $MICROAPP_BRANCH
           tar --exclude='.git' -zcvf output.tar.gz .
         '''
       }
