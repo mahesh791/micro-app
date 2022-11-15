@@ -25,9 +25,9 @@ pipeline {
           echo "\n"$(date) $BUILD_NUMBER >> versions
           git add versions && git commit -m \"Added ${BUILD_NUMBER}\"
           rel_ver=`cat release_version`
-          git tag -a v$rel_ver.${BUILD_NUMBER} -m \"my version ${BUILD_NUMBER}\"
+          git tag -a v$rel_ver.${BUILD_NUMBER}_$MICROAPP_BRANCH -m \"Adding tag for v$rel_ver.${BUILD_NUMBER}_${MICROAPP_BRANCH}\"
           git push origin HEAD:$MICROAPP_BRANCH
-          git push origin v$rel_ver.${BUILD_NUMBER}
+          git push origin v$rel_ver.${BUILD_NUMBER}_$MICROAPP_BRANCH
           #test
         '''
       }
