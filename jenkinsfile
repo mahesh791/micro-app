@@ -8,8 +8,8 @@ pipeline {
           echo 'safkl' > versions
           git config user.email "deoremahesh791@gmail.com"
           git config user.name "Mahesh"
+          git checkout $GIT_BRANCH
           git add . && git commit -m \"Added\"
-          echo $GIT_BRANCH
           #git push
         '''
       }
