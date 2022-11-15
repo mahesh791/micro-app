@@ -14,7 +14,7 @@ pipeline {
           git add . && git commit -m \"Added ${BUILD_NUMBER}\"
           git config --local credential.helper "!f() { echo username=\\$GIT_AUTH_USR; echo password=\\$GIT_AUTH_PSW; }; f"
           sleep 150
-          git push origin HEAD:main
+          git push origin HEAD:refs/remotes/$GIT_BRANCH
           #test
         '''
       }
