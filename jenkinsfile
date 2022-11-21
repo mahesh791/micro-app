@@ -15,7 +15,7 @@ pipeline {
         }
       steps {
         sh '''
-          #git switch -c $MICROAPP_BRANCH origin/$MICROAPP_BRANCH
+          git switch -c $GIT_BRANCH remotes/origin/$GIT_BRANCH
           echo $GIT_BRANCH
           git branch -v -a
           git --version
