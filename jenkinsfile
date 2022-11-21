@@ -15,6 +15,7 @@ pipeline {
         }
       steps {
         sh '''
+          #change
           git switch -c $GIT_BRANCH remotes/origin/$GIT_BRANCH
           echo $GIT_BRANCH
           if [[ $GIT_BRANCH != fix-* ]] && [[ $GIT_BRANCH != PR-* ]] ;
