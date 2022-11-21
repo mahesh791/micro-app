@@ -24,7 +24,7 @@ pipeline {
           git config user.name "Mahesh"
           git config --local credential.helper "!f() { echo username=\\$GIT_AUTH_USR; echo password=\\$GIT_AUTH_PSW; }; f"
           #sleep 25
-          git pull origin $MICROAPP_BRANCH
+          git pull origin $GIT_BRANCH
           echo "\n"$(date) $BUILD_NUMBER >> versions
           git add versions && git commit -m \"Added ${BUILD_NUMBER}\"
           rel_ver=`cat release_version`
