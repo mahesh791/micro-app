@@ -17,7 +17,7 @@ pipeline {
         sh '''
           git switch -c $GIT_BRANCH remotes/origin/$GIT_BRANCH
           echo $GIT_BRANCH
-          if [[ $GIT_BRANCH == fix-* ]] || [[ $GIT_BRANCH == PR-* ]] ;
+          if [[ $GIT_BRANCH != fix-* ]] || [[ $GIT_BRANCH != PR-* ]] ;
           then
           git branch -v -a
           git config user.email "deoremahesh791@gmail.com"
