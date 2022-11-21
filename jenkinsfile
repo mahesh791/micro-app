@@ -16,6 +16,7 @@ pipeline {
       steps {
         sh '''
           #git switch -c $MICROAPP_BRANCH origin/$MICROAPP_BRANCH
+          echo $GIT_BRANCH
           git branch -v -a
           git --version
           git config user.email "deoremahesh791@gmail.com"
