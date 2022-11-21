@@ -26,7 +26,7 @@ pipeline {
           git pull origin $MICROAPP_BRANCH
           echo "\n"$(date) $BUILD_NUMBER >> versions
           git add versions && git commit -m \"Added ${BUILD_NUMBER}\"
-          git push origin HEAD:remotes/origin/$GIT_BRANCH
+          git push origin HEAD:$GIT_BRANCH
           #test
         '''
       }
