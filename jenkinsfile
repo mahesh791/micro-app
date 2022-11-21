@@ -18,7 +18,6 @@ pipeline {
           git switch -c $GIT_BRANCH remotes/origin/$GIT_BRANCH
           echo $GIT_BRANCH
           git branch -v -a
-          git --version
           git config user.email "deoremahesh791@gmail.com"
           git config user.name "Mahesh"
           git config --local credential.helper "!f() { echo username=\\$GIT_AUTH_USR; echo password=\\$GIT_AUTH_PSW; }; f"
